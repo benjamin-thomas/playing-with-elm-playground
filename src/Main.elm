@@ -40,17 +40,20 @@ import Playground exposing (..)
 
 
 main =
+    animation view
+
+
+view time =
     let
         roulement =
             -10
     in
-    picture
-        [ square black 1500
-        , circle red 200
-        , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (0 + roulement)
-        , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (90 + roulement)
-        , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (180 + roulement)
-        , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (270 + roulement)
-        , circle red 40
-        , circle black 19
-        ]
+    [ square black 1500
+    , circle red 200
+    , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (0 + roulement) |> rotate (spin 2 time)
+    , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (90 + roulement) |> rotate (spin 2 time)
+    , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (180 + roulement) |> rotate (spin 2 time)
+    , polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (270 + roulement) |> rotate (spin 2 time)
+    , circle red 40
+    , circle black 19
+    ]
