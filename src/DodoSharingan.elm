@@ -11,14 +11,20 @@ spinValue =
     10
 
 
-spoke time rotateValue =
-    polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (90 * rotateValue) |> rotate (spin spinValue time)
-
-
-sharingan time =
+head =
     [ square black 1500
     , circle red 200
-    , spoke time 0.25
+    ]
+
+
+tail =
+    [ circle red 40
+    , circle black 19
+    ]
+
+
+spokes time =
+    [ spoke time 0.25
     , spoke time 0.5
     , spoke time 0.75
     , spoke time 1.0
@@ -34,6 +40,12 @@ sharingan time =
     , spoke time 3.5
     , spoke time 3.75
     , spoke time 4.0
-    , circle red 40
-    , circle black 19
     ]
+
+
+spoke time rotateValue =
+    polygon black [ ( -5, -5 ), ( 0, 100 ), ( 200, 0 ) ] |> rotate (90 * rotateValue) |> rotate (spin spinValue time)
+
+
+sharingan time =
+    head ++ spokes time ++ tail
