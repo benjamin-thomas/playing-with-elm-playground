@@ -1,4 +1,4 @@
-module Main exposing (main)
+module ShisuiSharigan exposing (main)
 
 import Playground exposing (..)
 
